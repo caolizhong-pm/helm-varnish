@@ -6,6 +6,6 @@ import std;
 # For SSL offloading, pass the following header in your proxy server or load balancer: 'X-Forwarded-Proto: https'
 
 backend default {
-  .host = "{{ default "google.com" .Values.varnishBackendService }}";
+  .host = "{{ default "127.0.0.1" .Values.varnishBackendService }}";
   .port = "{{ default "80" .Values.varnishBackendServicePort }}";
 }
